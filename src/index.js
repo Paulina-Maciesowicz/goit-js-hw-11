@@ -16,7 +16,7 @@ function fetchImages(name) {
     });
 }
 
-// countryBox.addEventListener('input', debounce(searchCountris, DEBOUNCE_DELAY));
+imagesForm.addEventListener('input', debounce(searchImages, DEBOUNCE_DELAY));
 
 function searchImages() {
   const abc = imagesForm.value.trim();
