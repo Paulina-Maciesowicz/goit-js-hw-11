@@ -31,14 +31,32 @@ function searchImages(event) {
 }
 
 function renderImages(images) {
-  console.log('Too many matches found. Please enter a more specific name.');
+  console.log(images);
   Notiflix.Notify.info(
     'Too many matches found. Please enter a more specific name.'
   );
 
   const markup = images
-  .map((image) => <div class="obraz"><img src=${image.url} alt=${image.alt}></div>)
-  .join("");
-listImages.insertAdjacentHTML("afterbegin", markup);
+    .map(image => {
+      return `
+    <div class="photo-card">
+  <div class="info">
+    <p class="info-item">
+      <b>Likes</b>
+    </p>
+    <p class="info-item">
+      <b>Views</b>
+    </p>
+    <p class="info-item">
+      <b>Comments</b>
+    </p>
+    <p class="info-item">
+      <b>Downloads</b>
+    </p>
+  </div>
+</div>`;
+    })
+    .join('');
+  listImages.innerHTML = card;
   return;
 }
