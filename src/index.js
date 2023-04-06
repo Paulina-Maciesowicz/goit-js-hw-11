@@ -1,4 +1,7 @@
-function fetchCountries(country) {
+const imagesForm = document.querySelector('#search-form');
+// const listImages = document.querySelector('');
+
+function fetchImages(name) {
   return fetch(
     `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=yellow+flowers&image_type=photo`
   ).then(response => {
@@ -7,4 +10,18 @@ function fetchCountries(country) {
     }
     return response.json();
   });
+}
+
+// countryBox.addEventListener('input', debounce(searchCountris, DEBOUNCE_DELAY));
+function searchImages() {
+  const abc = imagesForm.value.trim();
+  listCountries.innerHTML = '';
+  if (abc === '') return;
+  {
+    fetchImages(abc)
+      .then(users => renderImages(users))
+      .catch(error => {
+        Notiflix.Notify.failure('Oops, there is no country with that name');
+      });
+  }
 }
