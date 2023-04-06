@@ -38,10 +38,9 @@ function renderImages(images) {
 
   const card = images
     .map(image => {
-      return
-      `
+      return `
     <div class="photo-card">
-      <img src="${image[0].largeImageURL}" alt="" loading="lazy" />
+      <img src="${image.largeImageURL}" alt="" loading="lazy" />
       <div class="info">
         <p class="info-item">
           <b>Likes</b>
