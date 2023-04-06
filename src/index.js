@@ -14,6 +14,7 @@ function fetchImages(name) {
       if (!response.ok) {
         throw new Error(response.status);
       }
+      console.log(response);
       return response.json();
     });
 }
@@ -42,11 +43,10 @@ function renderImages(image) {
     return;
   }
   console.log(image);
-}
 
-const card = image
-  .map(image => {
-    `
+  const card = image
+    .map(image => {
+      `
     <div class="photo-card">
       <img src="${image.svg}" alt="" loading="lazy" />
       <div class="info">
@@ -64,7 +64,8 @@ const card = image
         </p>
       </div>
     </div>`;
-  })
-  .join('');
-listImages.innerHTML = markup;
-return;
+    })
+    .join('');
+  listImages.innerHTML = markup;
+  return;
+}
