@@ -57,6 +57,6 @@ function renderImages(images) {
 </div>`;
     })
     .join('');
-  listImages.innerHTML = card;
+  listImages.innerHTML = markup;
   return;
 }
