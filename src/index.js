@@ -11,7 +11,7 @@ function fetchImages(name) {
     )
     .then(response => {
       console.log(response);
-      return response.data();
+      return response.data;
     });
 }
 
@@ -36,7 +36,7 @@ function renderImages(image) {
     'Too many matches found. Please enter a more specific name.'
   );
 
-  console.log(image);
+  // console.log(image);
 
   const card = image
     .map(image => {
