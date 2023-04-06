@@ -40,7 +40,7 @@ function renderImages(images) {
     .map(image => {
       `
     <div class="photo-card">
-      <img src="${image.photo.jpg}" alt="" loading="lazy" />
+      <img src="${largeImageURL}" alt="" loading="lazy" />
       <div class="info">
         <p class="info-item">
           <b>Likes</b>
