@@ -40,22 +40,21 @@ function renderImages(images) {
     .map(image => {
       return `
     <div class="photo-card">
-      <img src="https://pixabay.com/get/g6e34940b7e1ffa646da6a8c65802f4972b81ec426ac87505662c39fa7ccfe9815630e63edf261426d8afa09ea5d06b122e912108c96072d728c53b9c75eaf8b8_1280.jpg" alt="" loading="lazy" />
-      <div class="info">
-        <p class="info-item">
-          <b>Likes</b>
-        </p>
-        <p class="info-item">
-          <b>Views</b>
-        </p>
-        <p class="info-item">
-          <b>Comments</b>
-        </p>
-        <p class="info-item">
-          <b>Downloads</b>
-        </p>
-      </div>
-    </div>`;
+  <div class="info">
+    <p class="info-item">
+      <b>Likes</b>
+    </p>
+    <p class="info-item">
+      <b>Views</b>
+    </p>
+    <p class="info-item">
+      <b>Comments</b>
+    </p>
+    <p class="info-item">
+      <b>Downloads</b>
+    </p>
+  </div>
+</div>`;
     })
     .join('');
   listImages.innerHTML = card;
