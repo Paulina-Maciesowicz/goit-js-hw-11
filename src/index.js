@@ -36,8 +36,8 @@ function renderImages(images) {
     'Too many matches found. Please enter a more specific name.'
   );
 
-  const card = images
-    .map(image => {
+  const markup = images
+    .map((image) => {
       return `
     <div class="photo-card">
   <div class="info">
@@ -57,6 +57,6 @@ function renderImages(images) {
 </div>`;
     })
     .join('');
-  listImages.innerHTML = card;
+  listImages.innerHTML = markup;
   return;
 }
