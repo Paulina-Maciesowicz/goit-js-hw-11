@@ -43,9 +43,9 @@ function renderImages(image) {
 }
 
 const card = image
-  .map(image => {
+  .map(image => {`
     <div class="photo-card">
-      <img src="" alt="" loading="lazy" />
+      <img src="${image.svg}" alt="" loading="lazy" />
       <div class="info">
         <p class="info-item">
           <b>Likes</b>
@@ -60,7 +60,7 @@ const card = image
           <b>Downloads</b>
         </p>
       </div>
-    </div>;
+    </div>`;
   })
   .join('');
 listImages.innerHTML = markup;
