@@ -1,5 +1,5 @@
 const imagesForm = document.querySelector('#search-form');
-// const listImages = document.querySelector('');
+const listImages = document.querySelector('#gallery');
 
 function fetchImages(name) {
   return fetch(
@@ -13,9 +13,10 @@ function fetchImages(name) {
 }
 
 // countryBox.addEventListener('input', debounce(searchCountris, DEBOUNCE_DELAY));
+
 function searchImages() {
   const abc = imagesForm.value.trim();
-  listCountries.innerHTML = '';
+  listImages.innerHTML = '';
   if (abc === '') return;
   {
     fetchImages(abc)
