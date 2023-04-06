@@ -30,7 +30,7 @@ function searchImages(event) {
 }
 
 function renderImages(images) {
-  const card = images
+  const card = images.hits
     .map(image => {
       return `
       <div class="photo-card">
