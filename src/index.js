@@ -66,6 +66,6 @@ function renderImages(image) {
     </div>`;
     })
     .join('');
-  listImages.innerHTML = markup;
-  return;
+  listImages.innerHTML = card;
+  // return;
 }
