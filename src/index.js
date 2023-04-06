@@ -27,9 +27,16 @@ function searchImages() {
   }
 }
 
-
-
-
+function renderImages(image) {
+  if (image.length > 10) {
+    console.log('Too many matches found. Please enter a more specific name.');
+    Notiflix.Notify.info(
+      'Too many matches found. Please enter a more specific name.'
+    );
+    return;
+  }
+  console.log(image);
+}
 
 // <div class="photo-card">
 //   <img src="" alt="" loading="lazy" />
