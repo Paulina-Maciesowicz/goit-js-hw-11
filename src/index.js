@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Notiflix from 'notiflix';
 
 const imagesForm = document.querySelector('#search-form');
 const listImages = document.querySelector('.gallery');
@@ -21,7 +22,7 @@ imagesForm.addEventListener('submit', searchImages);
 
 function searchImages(event) {
   event.preventDefault();
-  const abc = imagesForm.value.trim();
+  const abc = imagesForm.value;
   listImages.innerHTML = '';
   // if (abc === '') return;
   {
