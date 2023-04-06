@@ -10,7 +10,7 @@ function fetchImages(name) {
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=yellow+flowers&image_type=photo`
     )
     .then(response => {
-      console.log(response);
+      console.log(response.data.hits);
       return response.data;
     });
 }
@@ -23,26 +23,24 @@ function searchImages(event) {
   listImages.innerHTML = '';
   {
     fetchImages(abc)
-      .then(users => renderImages(users))
+      .then(images => renderImages(images))
       .catch(error => {
         Notiflix.Notify.failure('Oops, there is no image with that name');
       });
   }
 }
 
-function renderImages(image) {
+function renderImages(images) {
   console.log('Too many matches found. Please enter a more specific name.');
   Notiflix.Notify.info(
     'Too many matches found. Please enter a more specific name.'
   );
 
-  // console.log(image);
-
-  const card = image
+  const card = images
     .map(image => {
       `
     <div class="photo-card">
-      <img src="${image.svg}" alt="" loading="lazy" />
+      <img src="${image.photo.jpg}" alt="" loading="lazy" />
       <div class="info">
         <p class="info-item">
           <b>Likes</b>
