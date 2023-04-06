@@ -10,11 +10,8 @@ function fetchImages(name) {
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=yellow+flowers&image_type=photo`
     )
     .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
       console.log(response);
-      return response.json();
+      return response.data();
     });
 }
 
@@ -24,12 +21,11 @@ function searchImages(event) {
   event.preventDefault();
   const abc = imagesForm.value;
   listImages.innerHTML = '';
-  // if (abc === '') return;
   {
     fetchImages(abc)
       .then(users => renderImages(users))
       .catch(error => {
-        Notiflix.Notify.failure('Oops, there is no country with that name');
+        Notiflix.Notify.failure('Oops, there is no image with that name');
       });
   }
 }
@@ -65,4 +61,5 @@ function renderImages(image) {
     })
     .join('');
   listImages.innerHTML = card;
+  return;
 }
