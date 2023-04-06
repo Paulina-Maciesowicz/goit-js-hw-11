@@ -10,7 +10,7 @@ function fetchImages(name) {
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=yellow+flowers&image_type=photo`
     )
     .then(response => {
-      console.log(response.data.hits);
+      console.log(response.data.hits[0].largeImageURL);
       return response.data;
     });
 }
@@ -40,7 +40,7 @@ function renderImages(images) {
     .map(image => {
       `
     <div class="photo-card">
-      <img src="${largeImageURL}" alt="" loading="lazy" />
+      <img src="${image[0].largeImageURL}" alt="" loading="lazy" />
       <div class="info">
         <p class="info-item">
           <b>Likes</b>
