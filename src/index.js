@@ -3,8 +3,6 @@ import axios from 'axios';
 const imagesForm = document.querySelector('#search-form');
 const listImages = document.querySelector('.gallery');
 
-const DEBOUNCE_DELAY = 300;
-
 function fetchImages(name) {
   return axios
     .get(
