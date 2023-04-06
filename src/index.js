@@ -19,10 +19,11 @@ function fetchImages(name) {
 
 imagesForm.addEventListener('submit', searchImages);
 
-function searchImages() {
+function searchImages(event) {
+  event.preventDefault();
   const abc = imagesForm.value.trim();
   listImages.innerHTML = '';
-  if (abc === '') return;
+  // if (abc === '') return;
   {
     fetchImages(abc)
       .then(users => renderImages(users))
