@@ -3,6 +3,8 @@ import axios from 'axios';
 const imagesForm = document.querySelector('#search-form');
 const listImages = document.querySelector('.gallery');
 
+const DEBOUNCE_DELAY = 300;
+
 function fetchImages(name) {
   return axios
     .get(
@@ -16,7 +18,7 @@ function fetchImages(name) {
     });
 }
 
-imagesForm.addEventListener('input', debounce(searchImages, DEBOUNCE_DELAY));
+imagesForm.addEventListener('submit', searchImages);
 
 function searchImages() {
   const abc = imagesForm.value.trim();
@@ -43,7 +45,8 @@ function renderImages(image) {
 }
 
 const card = image
-  .map(image => {`
+  .map(image => {
+    `
     <div class="photo-card">
       <img src="${image.svg}" alt="" loading="lazy" />
       <div class="info">
