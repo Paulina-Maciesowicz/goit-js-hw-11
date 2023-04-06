@@ -10,7 +10,6 @@ function fetchImages(name) {
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=yellow+flowers&image_type=photo`
     )
     .then(response => {
-      console.log(response.data.hits[0].largeImageURL);
       return response.data;
     });
 }
@@ -31,32 +30,28 @@ function searchImages(event) {
 }
 
 function renderImages(images) {
-  console.log(images);
-  Notiflix.Notify.info(
-    'Too many matches found. Please enter a more specific name.'
-  );
-
-  const markup = images
+  const card = images
     .map(image => {
       return `
-    <div class="photo-card">
-  <div class="info">
-    <p class="info-item">
-      <b>Likes</b>
-    </p>
-    <p class="info-item">
-      <b>Views</b>
-    </p>
-    <p class="info-item">
-      <b>Comments</b>
-    </p>
-    <p class="info-item">
-      <b>Downloads</b>
-    </p>
-  </div>
-</div>`;
+      <div class="photo-card">
+        <img src="${image.largeImageURL}" alt="" loading="lazy" />
+        <div class="info">
+          <p class="info-item">
+            <b>Likes:</b> ${image.likes}
+          </p>
+          <p class="info-item">
+            <b>Views:</b> ${image.views}
+          </p>
+          <p class="info-item">
+            <b>Comments:</b> ${image.comments}
+          </p>
+          <p class="info-item">
+            <b>Downloads:</b> ${image.downloads}
+          </p>
+        </div>
+      </div>`;
     })
     .join('');
-  listImages.innerHTML = markup;
-  return;
+  listImages.innerHTML = card;
+  console.log(card);
 }
