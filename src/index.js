@@ -1,5 +1,5 @@
 const imagesForm = document.querySelector('#search-form');
-const listImages = document.querySelector('#gallery');
+const listImages = document.querySelector('.gallery');
 
 function fetchImages(name) {
   return fetch(
