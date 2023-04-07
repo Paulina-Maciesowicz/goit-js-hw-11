@@ -26,6 +26,7 @@ function searchImages(event) {
     elements: { searchQuery },
   } = event.currentTarget;
   console.log(searchQuery.value);
+  let searchMore = searchQuery.value;
   page++;
   // listImages.innerHTML = '';
   {
