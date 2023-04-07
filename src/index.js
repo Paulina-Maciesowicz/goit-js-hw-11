@@ -18,7 +18,7 @@ function fetchImages(name) {
 }
 
 imagesForm.addEventListener('submit', searchImages);
-moreImages.addEventListener('click');
+moreImages.addEventListener('click', searchImages);
 
 function searchImages(event) {
   event.preventDefault();
