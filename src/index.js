@@ -64,5 +64,11 @@ function renderImages(images) {
   console.log(card);
 }
 
-moreImages.addEventListener('click', addMoreImage);
-function addMoreImage() {}
+moreImages.addEventListener('click', addMoreImages);
+function addMoreImages() {
+  fetchImages(searchQuery.value)
+    .then(images => renderImages(images))
+    .catch(error => {
+      Notiflix.Notify.failure('Oops, there is no image with that name');
+    });
+}
