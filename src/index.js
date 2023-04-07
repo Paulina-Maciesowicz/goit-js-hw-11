@@ -67,7 +67,8 @@ function renderImages(images) {
 }
 
 moreImages.addEventListener('click', addMoreImages);
-function addMoreImages() { if ((searchMoreEnd = response.data.totalHits)===Notiflix.Notify.failure('We're sorry, but you've reached the end of search results.');)
+
+function addMoreImages() { if {(searchMoreEnd = response.data.totalHits) === Notiflix.Notify.failure('We're sorry, but you've reached the end of search results.'); }
   page++;
   fetchImages(searchMore)
     .then(images => renderImages(images))
