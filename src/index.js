@@ -64,5 +64,5 @@ function renderImages(images) {
   console.log(card);
 }
 
-moreImages.addEventListener('click', searchImages);
+moreImages.addEventListener('click', addMoreImage);
 function addMoreImage() {}
