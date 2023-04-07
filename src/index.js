@@ -6,7 +6,8 @@ const listImages = document.querySelector('.gallery');
 const moreImages = document.querySelector('.load-more');
 
 let page = 1;
-let searchMore = "";
+let searchMore = '';
+let searchMoreEnd = '';
 
 function fetchImages(name) {
   return axios
@@ -26,9 +27,9 @@ function searchImages(event) {
     elements: { searchQuery },
   } = event.currentTarget;
   console.log(searchQuery.value);
-  let searchMore = searchQuery.value;
-  page++;
-  // listImages.innerHTML = '';
+  searchMore = searchQuery.value;
+
+  listImages.innerHTML = '';
   {
     fetchImages(searchQuery.value)
       .then(images => renderImages(images))
@@ -66,10 +67,12 @@ function renderImages(images) {
 }
 
 moreImages.addEventListener('click', addMoreImages);
-function addMoreImages() {
+function addMoreImages() { if ((searchMoreEnd = response.data.totalHits)===Notiflix.Notify.failure('We're sorry, but you've reached the end of search results.');)
+  page++;
   fetchImages(searchMore)
     .then(images => renderImages(images))
     .catch(error => {
       Notiflix.Notify.failure('Oops, there is no image with that name');
     });
 }
+
