@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 const imagesForm = document.querySelector('#search-form');
 const listImages = document.querySelector('.gallery');
 // const moreImages = document.querySelector('#load-more');
-let page = 1
+let page = 1;
 
 function fetchImages(name) {
   return axios
@@ -59,6 +59,6 @@ function renderImages(images) {
       </div>`;
     })
     .join('');
-  listImages.innerHTML = card;
+  listImages.insertAdjacentHTML('beforeend', card);
   console.log(card);
 }
