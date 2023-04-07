@@ -8,13 +8,15 @@ const moreImages = document.querySelector('.load-more');
 let page = 1;
 let searchMore = '';
 let searchMoreEnd = 'false';
+let pageNow = response.data.totalHits / 40;
 
 function fetchImages(name) {
   return axios
     .get(
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=${name}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=3`
     )
-    .then(response => { console.log(response.data.totalHits);
+    .then(response => {
+      console.log(response.data.totalHits);
       return response.data;
     });
 }
