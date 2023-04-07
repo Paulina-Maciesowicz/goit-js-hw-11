@@ -25,8 +25,8 @@ function searchImages(event) {
     elements: { searchQuery },
   } = event.currentTarget;
   console.log(searchQuery.value);
-
-  listImages.innerHTML = '';
+  page++;
+  // listImages.innerHTML = '';
   {
     fetchImages(searchQuery.value)
       .then(images => renderImages(images))
