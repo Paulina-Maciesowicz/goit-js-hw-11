@@ -14,7 +14,7 @@ function fetchImages(name) {
     .get(
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=${name}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=3`
     )
-    .then(response => {
+    .then(response => { console.log(response.data.totalHits);
       return response.data;
     });
 }
