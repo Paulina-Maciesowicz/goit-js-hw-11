@@ -3,6 +3,7 @@ import Notiflix from 'notiflix';
 
 const imagesForm = document.querySelector('#search-form');
 const listImages = document.querySelector('.gallery');
+// const moreImages = document.querySelector('#load-more');
 
 function fetchImages(name) {
   return axios
@@ -15,6 +16,7 @@ function fetchImages(name) {
 }
 
 imagesForm.addEventListener('submit', searchImages);
+// moreImages.addEventListener('button', renderImages);
 
 function searchImages(event) {
   event.preventDefault();
