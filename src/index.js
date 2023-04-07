@@ -7,7 +7,7 @@ const moreImages = document.querySelector('.load-more');
 
 let page = 1;
 let searchMore = '';
-let searchMoreEnd = '';
+let searchMoreEnd = 'false';
 
 function fetchImages(name) {
   return axios
@@ -68,7 +68,12 @@ function renderImages(images) {
 
 moreImages.addEventListener('click', addMoreImages);
 
-function addMoreImages(){ if (searchMoreEnd === true)  {Notiflix.Notify.failure('We're sorry, but you've reached the end of search results.'); }
+function addMoreImages() {
+  if (searchMoreEnd === true) {
+    Notiflix.Notify.failure(
+      'We are sorry, but you have reached the end of search results.'
+    );
+  }
   page++;
   fetchImages(searchMore)
     .then(images => renderImages(images))
@@ -76,4 +81,3 @@ function addMoreImages(){ if (searchMoreEnd === true)  {Notiflix.Notify.failure(
       Notiflix.Notify.failure('Oops, there is no image with that name');
     });
 }
-
