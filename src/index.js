@@ -63,7 +63,7 @@ function renderImages(images) {
     })
     .join('');
   listImages.insertAdjacentHTML('beforeend', card);
-  console.log(card);
+  // console.log(card);
 }
 
 moreImages.addEventListener('click', addMoreImages);
