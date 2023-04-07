@@ -6,6 +6,7 @@ const listImages = document.querySelector('.gallery');
 const moreImages = document.querySelector('.load-more');
 
 let page = 1;
+// let searchMore = ;
 
 function fetchImages(name) {
   return axios
@@ -18,7 +19,6 @@ function fetchImages(name) {
 }
 
 imagesForm.addEventListener('submit', searchImages);
-moreImages.addEventListener('click', searchImages);
 
 function searchImages(event) {
   event.preventDefault();
@@ -63,3 +63,6 @@ function renderImages(images) {
   listImages.insertAdjacentHTML('beforeend', card);
   console.log(card);
 }
+
+moreImages.addEventListener('click', searchImages);
+function addMoreImage() {}
