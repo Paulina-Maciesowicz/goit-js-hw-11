@@ -7,7 +7,7 @@ const moreImages = document.querySelector('.load-more');
 
 let page = 1;
 let searchMore = '';
-let searchMoreEnd = 'false';
+let searchMoreEnd = 'true';
 // let pageNow = response.data.totalHits / 40;
 
 function fetchImages(name) {
@@ -71,7 +71,7 @@ function renderImages(images) {
 moreImages.addEventListener('click', addMoreImages);
 
 function addMoreImages() {
-  if (searchMoreEnd === true) {
+  if (searchMoreEnd !== true) {
     Notiflix.Notify.failure(
       'We are sorry, but you have reached the end of search results.'
     );
