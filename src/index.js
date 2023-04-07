@@ -20,7 +20,9 @@ imagesForm.addEventListener('submit', searchImages);
 
 function searchImages(event) {
   event.preventDefault();
-  const abc = imagesForm.value;
+  const {
+    elements: { searchQuery },
+  } = event.currentTarget;
   listImages.innerHTML = '';
   {
     fetchImages(abc)
