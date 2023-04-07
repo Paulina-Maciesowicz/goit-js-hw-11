@@ -6,7 +6,7 @@ const listImages = document.querySelector('.gallery');
 const moreImages = document.querySelector('.load-more');
 
 let page = 1;
-// let searchMore = ;
+let searchMore = searchQuery.value;
 
 function fetchImages(name) {
   return axios
@@ -66,7 +66,7 @@ function renderImages(images) {
 
 moreImages.addEventListener('click', addMoreImages);
 function addMoreImages() {
-  fetchImages(searchQuery.value)
+  fetchImages(searchMore)
     .then(images => renderImages(images))
     .catch(error => {
       Notiflix.Notify.failure('Oops, there is no image with that name');
