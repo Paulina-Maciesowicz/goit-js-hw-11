@@ -6,7 +6,7 @@ const listImages = document.querySelector('.gallery');
 const moreImages = document.querySelector('.load-more');
 
 let page = 1;
-let searchMore = searchQuery.value;
+let searchMore = "";
 
 function fetchImages(name) {
   return axios
