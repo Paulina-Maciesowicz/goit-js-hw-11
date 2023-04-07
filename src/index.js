@@ -23,8 +23,8 @@ function searchImages(event) {
   const {
     elements: { searchQuery },
   } = event.currentTarget;
-  console.log(searchQuery);
-  
+  console.log(searchQuery.value);
+
   listImages.innerHTML = '';
   {
     fetchImages(abc)
