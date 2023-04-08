@@ -15,7 +15,7 @@ function fetchImages(name) {
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=${name}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=3`
     )
     .then(response => {
-      if (!response.data.totalHits < 1) {
+      if (response.data.totalHits < 1) {
         throw new Error(response.status);
       }
       searchMoreEnd = response.data.totalHits / 40 > page;
@@ -42,7 +42,9 @@ function searchImages(event) {
     fetchImages(searchQuery.value)
       .then(images => renderImages(images))
       .catch(error => {
-        Notiflix.Notify.failure('Oops, there is no image with that name');
+        Notiflix.Notify.failure(
+          "Sorry, there are no images matching your search query. Please try again."
+        );
       });
   }
 }
@@ -84,6 +86,8 @@ function addMoreImages() {
   fetchImages(searchMore)
     .then(images => renderImages(images))
     .catch(error => {
-      Notiflix.Notify.failure('Oops, there is no image with that name');
+      Notiflix.Notify.failure(
+        'Sorry, there are no images matching your search query. Please try again.'
+      );
     });
 }
