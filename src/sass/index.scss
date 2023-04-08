@@ -1,6 +1,9 @@
 @import './common';
 @import './example';
 
+body {
+  overflow-x: hidden;
+}
 img {
   object-fit: cover;
 }
@@ -13,8 +16,8 @@ img {
 }
 input {
   border-radius: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
   outline: none;
   border: 0.5px solid rgb(37, 37, 37);
 }
@@ -25,9 +28,7 @@ button {
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-form {
-  justify-content: center;
-}
+
 .gallery {
   gap: 10px;
   display: flex;
@@ -85,12 +86,18 @@ form {
 
 .btn-search {
   background-color: rgb(255, 151, 103);
+  padding: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .load {
+  padding: 16px;
+  display: flex;
   justify-content: center;
   .load-more {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
     background-color: rgb(255, 151, 103);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
