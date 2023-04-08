@@ -30,7 +30,7 @@ function searchImages(event) {
   console.log(searchQuery.value);
   searchMore = searchQuery.value;
   page = 1;
-
+  // btn.style.visibility = 'visible';
   listImages.innerHTML = '';
   {
     fetchImages(searchQuery.value)
