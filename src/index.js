@@ -9,8 +9,8 @@ let page = 1;
 let searchMore = '';
 let searchMoreEnd = true;
 
-function fetchImages(name) {
-  return axios
+async function fetchImages(name) {
+  return await axios
     .get(
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=${name}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`
     )
@@ -41,7 +41,6 @@ function searchImages(event) {
   {
     fetchImages(searchQuery.value)
       .then(images => renderImages(images))
-      // .then(images => console.log(totalHits))
       .catch(error => {
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
