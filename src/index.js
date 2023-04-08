@@ -16,7 +16,8 @@ function fetchImages(name) {
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=${name}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=3`
     )
     .then(response => {
-      console.log(response.data.totalHits / 40 > page);
+      searchMoreEnd = response.data.totalHits / 40 > page;
+      // console.log(response.data.totalHits / 40 > page);
       return response.data;
     });
 }
@@ -76,7 +77,7 @@ function addMoreImages() {
       'We are sorry, but you have reached the end of search results.'
     );
   }
-  page++;
+  page=1;
   fetchImages(searchMore)
     .then(images => renderImages(images))
     .catch(error => {
