@@ -31,7 +31,7 @@ function searchImages(event) {
   } = event.currentTarget;
   console.log(searchQuery.value);
   searchMore = searchQuery.value;
-
+  page = 1;
   listImages.innerHTML = '';
   {
     fetchImages(searchQuery.value)
@@ -77,7 +77,7 @@ function addMoreImages() {
       'We are sorry, but you have reached the end of search results.'
     );
   }
-  page=1;
+  page++;
   fetchImages(searchMore)
     .then(images => renderImages(images))
     .catch(error => {
