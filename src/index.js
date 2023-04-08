@@ -37,7 +37,7 @@ function searchImages(event) {
   const onClick = () => {
     setTimeout(() => {
       document.getElementById('load-more').style.display = 'block';
-    }, 1000);
+    }, 3000);
   };
   onClick();
 
