@@ -34,6 +34,7 @@ function searchImages(event) {
   searchMore = searchQuery.value;
   page = 1;
 
+  document.getElementById('load-more').style.display = 'none';
   const onClick = () => {
     setTimeout(() => {
       document.getElementById('load-more').style.display = 'block';
