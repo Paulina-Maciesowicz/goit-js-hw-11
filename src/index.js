@@ -40,7 +40,10 @@ function searchImages(event) {
 
   {
     fetchImages(searchQuery.value)
-      .then(images => renderImages(images))
+      .then(images => {
+        renderImages(images);
+        Notiflix.Notify.succes(`Hooray! We found ${totalHits} images.`);
+      })
       .catch(error => {
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
