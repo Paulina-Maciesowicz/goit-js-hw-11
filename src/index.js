@@ -31,6 +31,8 @@ function searchImages(event) {
   searchMore = searchQuery.value;
   page = 1;
 
+  document.getElementById('load-more').style.display = 'visible';
+
   listImages.innerHTML = '';
 
   {
@@ -81,10 +83,4 @@ function addMoreImages() {
     .catch(error => {
       Notiflix.Notify.failure('Oops, there is no image with that name');
     });
-}
-
-if (searchImages === (page = 1)) {
-  document.getElementById('load-more').style.display = 'visible';
-} else {
-  document.getElementById('load-more').style.display = 'hidden';
 }
