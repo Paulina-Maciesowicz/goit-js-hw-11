@@ -39,7 +39,7 @@ function searchImages(event) {
       document.getElementById('load-more').style.display = 'block';
     }, 1000);
   };
-  onClick;
+  onClick();
 
   listImages.innerHTML = '';
 
@@ -61,7 +61,7 @@ function renderImages(images) {
     .map(image => {
       return `
       <div class="photo-card">
-        <img src="${image.largeImageURL}" alt="" loading="lazy" />
+        <img src="${image.largeImageURL}" alt="${image.tags}" loading="lazy" />
         <div class="info">
           <p class="info-item">
             <b>Likes</b></br> ${image.likes}
