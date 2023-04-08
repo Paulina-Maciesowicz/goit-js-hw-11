@@ -15,7 +15,7 @@ function fetchImages(name) {
       `https://pixabay.com/api/?key=21858532-01f8fabf05f69063186fd3644&q=${name}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=3`
     )
     .then(response => {
-      if (!response.status.ok) {
+      if (!response.data.totalHits < 1) {
         throw new Error(response.status);
       }
       searchMoreEnd = response.data.totalHits / 40 > page;
