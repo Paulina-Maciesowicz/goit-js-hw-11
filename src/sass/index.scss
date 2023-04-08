@@ -1,2 +1,23 @@
 @import './common';
 @import './example';
+
+img {
+  width: 35%;
+}
+.gallery {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.photo-card {
+  display: block;
+  justify-items: center;
+  .info {
+    display: flex;
+
+    gap: 10px;
+    &-item {
+      text-align: center;
+    }
+  }
+}
