@@ -34,7 +34,12 @@ function searchImages(event) {
   searchMore = searchQuery.value;
   page = 1;
 
-  document.getElementById('load-more').style.display = 'block';
+  const onClick = () => {
+    setTimeout(() => {
+      document.getElementById('load-more').style.display = 'block';
+    }, 1000);
+  };
+  onClick;
 
   listImages.innerHTML = '';
 
@@ -42,7 +47,7 @@ function searchImages(event) {
     fetchImages(searchQuery.value)
       .then(images => {
         renderImages(images);
-        Notiflix.Notify.succes(`Hooray! We found ${totalHits} images.`);
+        Notiflix.Notify.success(`Hooray! We found ${images.totalHits} images.`);
       })
       .catch(error => {
         Notiflix.Notify.failure(
