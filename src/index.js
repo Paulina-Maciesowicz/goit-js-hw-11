@@ -30,8 +30,9 @@ function searchImages(event) {
   console.log(searchQuery.value);
   searchMore = searchQuery.value;
   page = 1;
-  // btn.style.visibility = 'visible';
+
   listImages.innerHTML = '';
+
   {
     fetchImages(searchQuery.value)
       .then(images => renderImages(images))
@@ -40,7 +41,6 @@ function searchImages(event) {
       });
   }
 }
-
 function renderImages(images) {
   const card = images.hits
     .map(image => {
