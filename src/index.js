@@ -82,3 +82,9 @@ function addMoreImages() {
       Notiflix.Notify.failure('Oops, there is no image with that name');
     });
 }
+
+if (searchImages === (page = 1)) {
+  document.getElementById('load-more').style.display = 'visible';
+} else {
+  document.getElementById('load-more').style.display = 'hidden';
+}
