@@ -8,7 +8,6 @@ const moreImages = document.querySelector('.load-more');
 let page = 1;
 let searchMore = '';
 let searchMoreEnd = true;
-// let pageNow = response.data.totalHits / 40;
 
 function fetchImages(name) {
   return axios
@@ -17,7 +16,6 @@ function fetchImages(name) {
     )
     .then(response => {
       searchMoreEnd = response.data.totalHits / 40 > page;
-      // console.log(response.data.totalHits / 40 > page);
       return response.data;
     });
 }
@@ -32,6 +30,7 @@ function searchImages(event) {
   console.log(searchQuery.value);
   searchMore = searchQuery.value;
   page = 1;
+
   listImages.innerHTML = '';
   {
     fetchImages(searchQuery.value)
@@ -66,7 +65,6 @@ function renderImages(images) {
     })
     .join('');
   listImages.insertAdjacentHTML('beforeend', card);
-  // console.log(card);
 }
 
 moreImages.addEventListener('click', addMoreImages);
