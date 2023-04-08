@@ -31,7 +31,7 @@ function searchImages(event) {
   searchMore = searchQuery.value;
   page = 1;
 
-  document.getElementById('load-more').style.display = 'visible';
+  document.getElementById('load-more').style.display = 'block';
 
   listImages.innerHTML = '';
 
