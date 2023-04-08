@@ -7,7 +7,7 @@ const moreImages = document.querySelector('.load-more');
 
 let page = 1;
 let searchMore = '';
-let searchMoreEnd = 'true';
+let searchMoreEnd = true;
 // let pageNow = response.data.totalHits / 40;
 
 function fetchImages(name) {
