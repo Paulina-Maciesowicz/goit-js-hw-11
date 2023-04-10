@@ -87,6 +87,7 @@ moreImages.addEventListener('click', addMoreImages);
 
 function addMoreImages() {
   if (searchMoreEnd !== true) {
+    document.getElementById('load-more').style.display = 'none';
     Notiflix.Notify.failure(
       'We are sorry, but you have reached the end of search results.'
     );
